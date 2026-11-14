@@ -232,7 +232,7 @@ Transform:
   m_GameObject: {fileID: 127604320}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 5.74, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -269,6 +269,7 @@ GameObject:
   - component: {fileID: 352156562}
   - component: {fileID: 352156561}
   - component: {fileID: 352156566}
+  - component: {fileID: 352156567}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -437,6 +438,31 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &352156567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352156560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eaf70e2e722c274aa0b949b0c243527, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runSpeed: 0
+  jumpForce: 14
+  enableSlide: 1
+  slideDuration: 0.6
+  slideCooldown: 0.3
+  slideColliderHeight: 1.4
+  groundCheck: {fileID: 794503361}
+  groundCheckRadius: 0.3
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  coyoteTime: 0.1
+  jumpBufferTime: 0.1
 --- !u!1 &377505391
 GameObject:
   m_ObjectHideFlags: 0
