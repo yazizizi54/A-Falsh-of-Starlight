@@ -1,0 +1,48 @@
+﻿using UnityEngine;
+
+[RequireComponent(typeof(Rigidbody2D))]
+public class PlayerAutoRun : MonoBehaviour
+{
+    [Header("移动")]
+    [SerializeField] float runSpeed = 6f;
+    [SerializeField] float jumpForce = 12f;
+
+    [Header("地面检测")]
+    [SerializeField] Transform groundCheck;
+    [SerializeField] float groundCheckRadius = 0.15f;
+    [SerializeField] LayerMask groundLayer;
+
+    Rigidbody2D rb;
+    bool isGrounded;
+
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    void FixedUpdate()
+    {
+        // 水平方向：恒定速度（Unity 2022.3 用 velocity）
+        rb.velocity = new Vector2(runSpeed, rb.velocity.y);
+    }
+
+    void Update()
+    {
+        // 地面检测：脚下画个小圆，碰到 groundLayer 就算着地
+        if (groundCheck != null)
+            isGrounded = Physics2D.OverlapCircle(
+                groundCheck.position, groundCheckRadius, groundLayer);
+
+        // 跳跃
+        if (Input.GetButtonDown("Jump") && isGrounded)
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+    }
+
+    // 在 Scene 视图里画出检测圈，方便调
+    void OnDrawGizmosSelected()
+    {
+        if (groundCheck == null) return;
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
+    }
+}
