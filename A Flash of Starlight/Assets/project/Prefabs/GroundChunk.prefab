@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3482436817739305895}
   - component: {fileID: 9105597527402900316}
-  - component: {fileID: 4074707804260807541}
+  - component: {fileID: 897816144275827929}
   m_Layer: 6
   m_Name: GroundChunk
   m_TagString: Untagged
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: -1939866477
   m_SortingLayer: 4
   m_SortingOrder: -5
-  m_Sprite: {fileID: 21300000, guid: 2537f19670d66d9489b6dfd73258a947, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 292a2ad4c15726b45823b567cbaddd5f, type: 3}
   m_Color: {r: 0.52750915, g: 0.52750915, b: 0.52750915, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -85,8 +85,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &4074707804260807541
-BoxCollider2D:
+--- !u!68 &897816144275827929
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -117,16 +117,21 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.038458824, y: 0.38651454}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 20.48, y: 20.48}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 20.501333, y: 3.6796982}
+  m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
+  m_Points:
+  - {x: -10.190091, y: -1.3144193}
+  - {x: -7.663295, y: -0.4052757}
+  - {x: -7.558841, y: -0.33838826}
+  - {x: -7.527709, y: -0.32116067}
+  - {x: -4.540661, y: 0.36362368}
+  - {x: -2.0528018, y: 0.6781876}
+  - {x: 0.0100068, y: 0.74258894}
+  - {x: 4.618739, y: 0.3568672}
+  - {x: 4.9948936, y: 0.25576913}
+  - {x: 5.990943, y: 0.04226452}
+  - {x: 10.162526, y: -1.3471729}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
