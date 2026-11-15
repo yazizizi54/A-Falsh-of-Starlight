@@ -2,12 +2,17 @@ using UnityEngine;
 
 public class PlanetRotate : MonoBehaviour
 {
+    [Header("引用")]
     [SerializeField] Transform planetCenter;
-    [SerializeField] float rotateSpeed = 10f;   // 度/秒
+
+    [Header("旋转")]
+    [Tooltip("度/秒，正数为逆时针（地面向左流）")]
+    [SerializeField] float rotateSpeed = 2f;
 
     void Update()
     {
-        // 绕圆心旋转，会让地面往左流
+        if (planetCenter == null) return;
+
         transform.RotateAround(
             planetCenter.position,
             Vector3.forward,
