@@ -11,23 +11,23 @@ public class LightOrb : MonoBehaviour
     [Header("拾取")]
     [SerializeField] float pickupDuration = 0.25f;
 
-    Vector3 basePos;
+    Vector3 baseLocalPos;   // 改成记录 localPosition
     bool picked;
 
     void Start()
     {
-        basePos = transform.position;
+        baseLocalPos = transform.localPosition;
     }
 
     void Update()
     {
         if (picked) return;
 
-        // 上下浮动（用 position 做随机相位，避免所有球同步）
-        float phase = transform.position.x * 0.7f;
+        // 用 localPosition 浮动，不干扰父物体的移动
+        float phase = baseLocalPos.x * 0.7f;
         float y = Mathf.Sin(Time.time * bobSpeed + phase) * bobAmplitude;
 
-        transform.position = basePos + new Vector3(0f, y, 0f);
+        transform.localPosition = baseLocalPos + new Vector3(0f, y, 0f);
         transform.Rotate(0f, 0f, rotateSpeed * Time.deltaTime);
     }
 
