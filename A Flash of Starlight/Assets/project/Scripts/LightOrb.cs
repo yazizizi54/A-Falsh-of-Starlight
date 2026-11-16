@@ -37,7 +37,12 @@ public class LightOrb : MonoBehaviour
         if (!other.CompareTag("Player")) return;
 
         picked = true;
+
+        if (OrbCounter.Instance != null)
+            OrbCounter.Instance.Add(1);
+
         StartCoroutine(PickupRoutine());
+
     }
 
     IEnumerator PickupRoutine()
