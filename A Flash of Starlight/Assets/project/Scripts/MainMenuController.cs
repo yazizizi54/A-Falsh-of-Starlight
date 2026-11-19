@@ -3,17 +3,18 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
-    [SerializeField] string gameplaySceneName = "Gameplay";
+    [SerializeField] string storySceneName = "Story";
 
     public void OnStartClicked()
     {
-        SceneManager.LoadScene(gameplaySceneName);
+        if (ScreenFader.Instance != null)
+            ScreenFader.Instance.LoadScene(storySceneName);
+        else
+            SceneManager.LoadScene(storySceneName);
     }
 
     public void OnQuitClicked()
     {
-        Debug.Log("ÍË³öÓÎÏ·");
-
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else
